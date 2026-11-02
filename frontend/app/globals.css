@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --color-ecam-blue: #253e84;
+  --color-ecam-blue-dark: #1d3169;
+  --color-ecam-gray: #d5d7d8;
+}
