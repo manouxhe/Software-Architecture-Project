@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    volumes:
+      # Le volume pour sauvegarder la BDD sur ton vrai PC
+      - ./backend:/app
+      - /app/target
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    # Le frontend dépend du backend pour fonctionner
+    depends_on:
+      - backend
