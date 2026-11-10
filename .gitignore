@@ -64,6 +64,7 @@ backend/.nb-gradle/
 *.iml
 *.ipr
 *.db
+*.env
 
 # VS Code
 .vscode/
