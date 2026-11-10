@@ -54,6 +54,8 @@ backend/dist/
 backend/nbdist/
 backend/.nb-gradle/
 
+node_modules/
+
 
 # ==========================================
 # 3. GLOBAL (IDE, OS & Fichiers Système)
