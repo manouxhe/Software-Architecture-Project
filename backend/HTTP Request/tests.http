@@ -1,0 +1,37 @@
+### Inscription normale → doit répondre avec l'utilisateur et un id
+POST http://localhost:8080/api/utilisateurs
+Content-Type: application/json
+
+{
+  "email": "jean@ecam.be",
+  "motDePasse": "1234"
+}
+
+### Même email une 2e fois → doit échouer
+POST http://localhost:8080/api/utilisateurs
+Content-Type: application/json
+
+{
+  "email": "jean@ecam.be",
+  "motDePasse": "abcd"
+}
+
+### Email invalide → doit échouer (erreur 400)
+POST http://localhost:8080/api/utilisateurs
+Content-Type: application/json
+
+{
+  "email": "pasunemail",
+  "motDePasse": "1234"
+}
+
+### Tentative de pirate → doit créer un NOUVEL utilisateur, avec le rôle ELEVE
+POST http://localhost:8080/api/utilisateurs
+Content-Type: application/json
+
+{
+  "id": 1,
+  "email": "pirate@mail.com",
+  "motDePasse": "hack",
+  "role": "ADMIN"
+}

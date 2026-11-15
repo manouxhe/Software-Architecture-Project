@@ -1,6 +1,7 @@
 package com.ecam.clickup.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 public class Utilisateur {
@@ -8,6 +9,7 @@ public class Utilisateur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // PK_id
 
+    @Email
     private String email;
     private String motDePasse;
     private String role;
