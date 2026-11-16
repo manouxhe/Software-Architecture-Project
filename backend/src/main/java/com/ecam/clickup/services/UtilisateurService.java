@@ -23,9 +23,11 @@ public class UtilisateurService {
         verifierEmailUnique(utilisateur.getEmail());  //checker si l'email n'est pas déjà utilisé
         utilisateur.setId(null);                   //on garantit que l'inscription crée tjs un nv compte
         utilisateur.setRole("ELEVE");
+        // TODO : rajouter l'authentification / le hashage etc
         Utilisateur sauvegarde = utilisateurRepository.save(utilisateur);
         return sauvegarde;
     }
+
 
 
 
@@ -34,6 +36,9 @@ public class UtilisateurService {
         return utilisateurRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Utilisateur introuvable : " + id));
     }
+
+    //connexion (différentre entre connexion en tant qu'admin/eleve)
+
 
     //modif d'un utilisateur
 

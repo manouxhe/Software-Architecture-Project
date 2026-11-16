@@ -1,0 +1,12 @@
+### Création d'idée avec un statut accepté, un scoreUp et une dateCreation envoyé -> doivent être modifié avant d'être enregistré dans la db
+POST http://localhost:8080/api/idees
+Content-Type: application/json
+
+{
+  "id": "0",
+  "titre": "faire un hackaton à l'ECAM",
+  "statut": "ACCEPTEE",
+  "dateCreation" : "2007-12-03T10:15:30",
+  "scoreUp" : "255",
+  "scoreDown" : "0"
+}
