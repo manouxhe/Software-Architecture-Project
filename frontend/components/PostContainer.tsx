@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, SubmitEvent, use } from "react";
+import { useState, SubmitEvent } from "react";
 
 interface PostProps {
     username: string;
@@ -9,11 +9,12 @@ interface PostProps {
     pubtag: string;
     pubtitle: string;
     pubcontent:string;
+    initalVotes: number;
 }
 
-export default function PostContainer({username, pubdate, academicyear, pubtag, pubtitle, pubcontent}: PostProps) {
+export default function PostContainer({username, pubdate, academicyear, pubtag, pubtitle, pubcontent, initalVotes}: PostProps) {
     //Votes
-    const [votes, setVotes] = useState(0);
+    const [votes, setVotes] = useState(initalVotes);
     const [uservote, setUservote] = useState(null);
 
     //réactions 
