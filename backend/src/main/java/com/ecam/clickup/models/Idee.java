@@ -3,6 +3,8 @@ package com.ecam.clickup.models;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+
+
 @Entity
 public class Idee {
     @Id
@@ -13,13 +15,18 @@ public class Idee {
     
     @Column(columnDefinition = "TEXT")
     private String description;
-    
     private String categorie;
     private String anneeConcernee;
     private String statut;
     private LocalDateTime dateCreation;
     private int scoreUp;
     private int scoreDown;
+    @Convert(converter = FloatArrayConverter.class)
+    @Column(columnDefinition = "TEXT")
+    private float[] embedding;
+
+    public float[] getEmbedding() { return embedding; }
+    public void setEmbedding(float[] embedding) { this.embedding = embedding; }
 
     // FK_auteur_id : Relie l'idée à un Utilisateur
     @ManyToOne

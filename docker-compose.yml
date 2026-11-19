@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build: ./backend
@@ -9,6 +7,10 @@ services:
       # Le volume pour sauvegarder la BDD sur ton vrai PC
       - ./backend:/app
       - /app/target
+    environment:
+      - EMBEDDING_URL=http://embedding-service:8000
+    depends_on:
+      - embedding-service
 
   frontend:
     build: ./frontend
@@ -17,3 +19,8 @@ services:
     # Le frontend dépend du backend pour fonctionner
     depends_on:
       - backend
+
+  embedding-service:
+    build: ./embedding-service
+    ports:
+      - "8000:8000"

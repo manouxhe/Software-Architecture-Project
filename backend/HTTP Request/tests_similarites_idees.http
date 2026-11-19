@@ -1,0 +1,35 @@
+### 1. Première idée → attendu : 200
+POST http://localhost:8080/api/idees
+Content-Type: application/json
+
+{
+  "titre": "Ajouter des prises électriques dans la bibliothèque",
+  "description": "Il manque de prises pour charger les ordinateurs"
+}
+
+### 2. Idée similaire → attendu : 409 + liste des doublons
+POST http://localhost:8080/api/idees
+Content-Type: application/json
+
+{
+  "titre": "Plus de prises pour charger les ordis à la bibli",
+  "description": "Impossible de charger son pc"
+}
+
+### 3. Même idée, mais on force → attendu : 200
+POST http://localhost:8080/api/idees?forcer=true
+Content-Type: application/json
+
+{
+  "titre": "Plus de prises pour charger les ordis à la bibli",
+  "description": "Impossible de charger son pc"
+}
+
+### 4. Idée sans rapport → attendu : 200
+POST http://localhost:8080/api/idees
+Content-Type: application/json
+
+{
+  "titre": "Créer un club de théâtre",
+  "description": "Pour les étudiants intéressés par la scène"
+}
