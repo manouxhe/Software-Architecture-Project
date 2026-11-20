@@ -24,3 +24,8 @@ services:
     build: ./embedding-service
     ports:
       - "8000:8000"
+
+  llm-service:
+    build: ./LLM_algo
+    env_file:
+      - .env
