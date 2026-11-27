@@ -26,6 +26,8 @@ services:
       - "8000:8000"
 
   llm-service:
-    build: ./LLM_algo
+    build: ./LLM
+    ports:
+      - "3001:3001"
     env_file:
       - .env

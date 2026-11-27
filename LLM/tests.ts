@@ -11,3 +11,6 @@ for (const phrase of phrases) {
 }
 
 //npx tsx --env-file=.env LLM/tests.ts
+
+// pour lancer avec docker : 
+// docker compose exec llm-service npx tsx tests.ts
